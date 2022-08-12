@@ -1,0 +1,179 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Aug 12, 2022 at 10:16 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `music`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account`
+--
+
+CREATE TABLE `account` (
+  `AccountID` int(11) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Password` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`AccountID`, `Email`, `Password`) VALUES
+(1, 'sfreeman0@etsy.com', ''),
+(2, 'crodriguez1@va.gov', ''),
+(3, 'krobertson2@state.tx.us', ''),
+(4, 'pfoster3@earthlink.net', ''),
+(5, 'gsnyder4@cargocollective.com', ''),
+(6, 'ctucker5@un.org', ''),
+(7, 'fwilson6@chron.com', ''),
+(8, 'fbrown7@goo.gl', ''),
+(9, 'brogers8@noaa.gov', ''),
+(10, 'ahunter9@howstuffworks.com', ''),
+(11, 'mbella@1und1.de', ''),
+(12, 'dwatsonb@narod.ru', ''),
+(13, 'rrogersc@United States.com.cn', ''),
+(14, 'sarmstrongd@google.com', ''),
+(15, 'wkellye@usda.gov', ''),
+(16, 'jwilliamsf@mac.com', ''),
+(17, 'dfowlerg@bloomberg.com', ''),
+(18, 'rhudsonh@berkeley.edu', ''),
+(19, 'jdeani@facebook.com', ''),
+(20, 'whuntj@i2i.jp', ''),
+(21, 'mhernandezk@netvibes.com', ''),
+(22, 'lmurphyl@senate.gov', ''),
+(23, 'aarmstrongm@google.de', ''),
+(24, 'drusselln@4shared.com', ''),
+(25, 'csmitho@jugem.jp', ''),
+(26, 'wgonzalesp@webs.com', ''),
+(27, 'eelliottq@ed.gov', ''),
+(28, 'jdavisr@jugem.jp', ''),
+(29, 'pdiazs@cnbc.com', ''),
+(30, 'jlongt@vimeo.com', ''),
+(31, 'rrobinsonu@chicagotribune.com', ''),
+(32, 'mrussellv@gov.uk', ''),
+(33, 'jevansw@mac.com', ''),
+(34, 'jgutierrezx@godaddy.com', ''),
+(35, 'ppayney@washington.edu', ''),
+(36, 'cortizz@ucsd.edu', ''),
+(37, 'jmason10@miibeian.gov.cn', ''),
+(38, 'egonzales11@linkedin.com', ''),
+(39, 'nstephens12@ifeng.com', ''),
+(40, 'lromero13@uol.com.br', ''),
+(41, 'jcarr14@hostgator.com', ''),
+(42, 'pwillis15@networksolutions.com', ''),
+(43, 'wyoung16@wikia.com', ''),
+(44, 'nbishop17@intel.com', ''),
+(45, 'gschmidt18@blinklist.com', ''),
+(46, 'sstewart19@alibaba.com', ''),
+(47, 'rcook1a@com.com', ''),
+(48, 'ecarroll1b@google.cn', ''),
+(49, 'gweaver1c@cdbaby.com', ''),
+(50, 'vcarter1d@parallels.com', ''),
+(51, 'lrose1e@google.com.br', ''),
+(52, 'dhenry1f@imgur.com', ''),
+(53, 'jrobinson1g@senate.gov', ''),
+(54, 'jsnyder1h@etsy.com', ''),
+(55, 'jlittle1i@nature.com', ''),
+(56, 'bdaniels1j@pinterest.com', ''),
+(57, 'medwards1k@rambler.ru', ''),
+(58, 'pbrown1l@home.pl', ''),
+(59, 'jrivera1m@state.gov', ''),
+(60, 'jwhite1n@reddit.com', ''),
+(61, 'sray1o@cornell.edu', ''),
+(62, 'eedwards1p@usnews.com', ''),
+(63, 'fpierce1q@un.org', ''),
+(64, 'swilliams1r@pbs.org', ''),
+(65, 'dhansen1s@google.com.br', ''),
+(66, 'dfox1t@washingtonpost.com', ''),
+(67, 'bturner1u@newsvine.com', ''),
+(68, 'kkelly1v@walmart.com', ''),
+(69, 'tmorrison1w@marriott.com', ''),
+(70, 'gjohnson1x@nsw.gov.au', ''),
+(71, 'jjordan1y@ameblo.jp', ''),
+(72, 'ekelly1z@utexas.edu', ''),
+(73, 'ppatterson20@msn.com', ''),
+(74, 'khenry21@cnet.com', ''),
+(75, 'kpeters22@xrea.com', ''),
+(76, 'jthompson23@xing.com', ''),
+(77, 'hlynch24@4shared.com', ''),
+(78, 'mrose25@cloudflare.com', ''),
+(79, 'bfisher26@imageshack.us', ''),
+(80, 'arobertson27@studiopress.com', ''),
+(81, 'sgarcia28@npr.org', ''),
+(82, 'wnelson29@google.com.hk', ''),
+(83, 'agonzales2a@umich.edu', ''),
+(84, 'gbrown2b@histats.com', ''),
+(85, 'lgibson2c@wikimedia.org', ''),
+(86, 'jmendoza2d@surveymonkey.com', ''),
+(87, 'aryan2e@over-blog.com', ''),
+(88, 'ahawkins2f@hatena.ne.jp', ''),
+(89, 'jcoleman2g@trellian.com', ''),
+(90, 'pschmidt2h@dailymotion.com', ''),
+(91, 'fgeorge2i@state.gov', ''),
+(92, 'raustin2j@msu.edu', ''),
+(93, 'earnold2k@stumbleupon.com', ''),
+(94, 'bstone2l@yellowpages.com', ''),
+(95, 'ahart2m@rediff.com', ''),
+(96, 'mharper2n@mozilla.com', ''),
+(97, 'pwright2o@reference.com', ''),
+(98, 'rjohnston2p@discovery.com', ''),
+(99, 'jgutierrez2q@tinypic.com', ''),
+(100, 'rgutierrez2r@desdev.cn', ''),
+(102, '\'najat@gmail.com\'', 'ninanina'),
+(105, '\'test1@gmail.com\'', '\'iamiam\''),
+(106, '\'test2@gmail.com\'', '\'123123\''),
+(107, '\'test3@gmail.com\'', '\'YESY2IA');
+
+--
+-- Triggers `account`
+--
+DELIMITER $$
+CREATE TRIGGER `adduser` AFTER INSERT ON `account` FOR EACH ROW BEGIN
+       INSERT INTO users (AccountID) VALUES (NEW.AccountID);
+   END
+$$
+DELIMITER ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`AccountID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `account`
+--
+ALTER TABLE `account`
+  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
