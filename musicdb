@@ -1,179 +1,48 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Aug 12, 2022 at 10:16 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Create Playlist Table
+CREATE TABLE IF NOT EXISTS playlist (
+    playlist_id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(255),
+    title VARCHAR(255) NOT NULL
+);
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- Create Song Table with Duration and Date of Release
+CREATE TABLE IF NOT EXISTS song (
+    song_id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(255),
+    title VARCHAR(255) NOT NULL,
+    artist VARCHAR(255) NOT NULL,
+    album VARCHAR(255) NOT NULL,
+    duration TIME,
+    date_of_release DATE
+);
 
+-- Add more songs for Radiohead
+INSERT INTO song (image, title, artist, album, duration, date_of_release) VALUES
+    ('radiohead_image1.jpg', 'Street Spirit (Fade Out)', 'Radiohead', 'The Bends', '04:12:00', '1995-03-06'),
+    ('radiohead_image2.jpg', 'Everything in Its Right Place', 'Radiohead', 'Kid A', '05:08:00', '2000-10-02'),
+    ('radiohead_image3.jpg', 'Burn the Witch', 'Radiohead', 'A Moon Shaped Pool', '03:40:00', '2016-05-03');
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+-- Add more songs for twentyone pilots
+INSERT INTO song (image, title, artist, album, duration, date_of_release) VALUES
+    ('twentyonepilots_image1.jpg', 'Car Radio', 'Twenty One Pilots', 'Vessel', '04:27:00', '2013-03-18'),
+    ('twentyonepilots_image2.jpg', 'Nico and the Niners', 'Twenty One Pilots', 'Trench', '03:46:00', '2018-07-11'),
+    ('twentyonepilots_image3.jpg', 'Redecorate', 'Twenty One Pilots', 'Scales And Icy', '04:09:00', '2021-05-21');
 
---
--- Database: `music`
---
+-- Add more songs for Lana Del Rey
+INSERT INTO song (image, title, artist, album, duration, date_of_release) VALUES
+    ('lanadelrey_image1.jpg', 'West Coast', 'Lana Del Rey', 'Ultraviolence', '04:16:00', '2014-04-14'),
+    ('lanadelrey_image2.jpg', 'Mariners Apartment Complex', 'Lana Del Rey', 'Norman Fucking Rockwell!', '04:12:00', '2018-09-12'),
+    ('lanadelrey_image3.jpg', 'Born to Die', 'Lana Del Rey', 'Born to Die', '04:46:00', '2012-01-27');
 
--- --------------------------------------------------------
+-- Create Users Table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
---
--- Table structure for table `account`
---
-
-CREATE TABLE `account` (
-  `AccountID` int(11) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Password` varchar(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `account`
---
-
-INSERT INTO `account` (`AccountID`, `Email`, `Password`) VALUES
-(1, 'sfreeman0@etsy.com', ''),
-(2, 'crodriguez1@va.gov', ''),
-(3, 'krobertson2@state.tx.us', ''),
-(4, 'pfoster3@earthlink.net', ''),
-(5, 'gsnyder4@cargocollective.com', ''),
-(6, 'ctucker5@un.org', ''),
-(7, 'fwilson6@chron.com', ''),
-(8, 'fbrown7@goo.gl', ''),
-(9, 'brogers8@noaa.gov', ''),
-(10, 'ahunter9@howstuffworks.com', ''),
-(11, 'mbella@1und1.de', ''),
-(12, 'dwatsonb@narod.ru', ''),
-(13, 'rrogersc@United States.com.cn', ''),
-(14, 'sarmstrongd@google.com', ''),
-(15, 'wkellye@usda.gov', ''),
-(16, 'jwilliamsf@mac.com', ''),
-(17, 'dfowlerg@bloomberg.com', ''),
-(18, 'rhudsonh@berkeley.edu', ''),
-(19, 'jdeani@facebook.com', ''),
-(20, 'whuntj@i2i.jp', ''),
-(21, 'mhernandezk@netvibes.com', ''),
-(22, 'lmurphyl@senate.gov', ''),
-(23, 'aarmstrongm@google.de', ''),
-(24, 'drusselln@4shared.com', ''),
-(25, 'csmitho@jugem.jp', ''),
-(26, 'wgonzalesp@webs.com', ''),
-(27, 'eelliottq@ed.gov', ''),
-(28, 'jdavisr@jugem.jp', ''),
-(29, 'pdiazs@cnbc.com', ''),
-(30, 'jlongt@vimeo.com', ''),
-(31, 'rrobinsonu@chicagotribune.com', ''),
-(32, 'mrussellv@gov.uk', ''),
-(33, 'jevansw@mac.com', ''),
-(34, 'jgutierrezx@godaddy.com', ''),
-(35, 'ppayney@washington.edu', ''),
-(36, 'cortizz@ucsd.edu', ''),
-(37, 'jmason10@miibeian.gov.cn', ''),
-(38, 'egonzales11@linkedin.com', ''),
-(39, 'nstephens12@ifeng.com', ''),
-(40, 'lromero13@uol.com.br', ''),
-(41, 'jcarr14@hostgator.com', ''),
-(42, 'pwillis15@networksolutions.com', ''),
-(43, 'wyoung16@wikia.com', ''),
-(44, 'nbishop17@intel.com', ''),
-(45, 'gschmidt18@blinklist.com', ''),
-(46, 'sstewart19@alibaba.com', ''),
-(47, 'rcook1a@com.com', ''),
-(48, 'ecarroll1b@google.cn', ''),
-(49, 'gweaver1c@cdbaby.com', ''),
-(50, 'vcarter1d@parallels.com', ''),
-(51, 'lrose1e@google.com.br', ''),
-(52, 'dhenry1f@imgur.com', ''),
-(53, 'jrobinson1g@senate.gov', ''),
-(54, 'jsnyder1h@etsy.com', ''),
-(55, 'jlittle1i@nature.com', ''),
-(56, 'bdaniels1j@pinterest.com', ''),
-(57, 'medwards1k@rambler.ru', ''),
-(58, 'pbrown1l@home.pl', ''),
-(59, 'jrivera1m@state.gov', ''),
-(60, 'jwhite1n@reddit.com', ''),
-(61, 'sray1o@cornell.edu', ''),
-(62, 'eedwards1p@usnews.com', ''),
-(63, 'fpierce1q@un.org', ''),
-(64, 'swilliams1r@pbs.org', ''),
-(65, 'dhansen1s@google.com.br', ''),
-(66, 'dfox1t@washingtonpost.com', ''),
-(67, 'bturner1u@newsvine.com', ''),
-(68, 'kkelly1v@walmart.com', ''),
-(69, 'tmorrison1w@marriott.com', ''),
-(70, 'gjohnson1x@nsw.gov.au', ''),
-(71, 'jjordan1y@ameblo.jp', ''),
-(72, 'ekelly1z@utexas.edu', ''),
-(73, 'ppatterson20@msn.com', ''),
-(74, 'khenry21@cnet.com', ''),
-(75, 'kpeters22@xrea.com', ''),
-(76, 'jthompson23@xing.com', ''),
-(77, 'hlynch24@4shared.com', ''),
-(78, 'mrose25@cloudflare.com', ''),
-(79, 'bfisher26@imageshack.us', ''),
-(80, 'arobertson27@studiopress.com', ''),
-(81, 'sgarcia28@npr.org', ''),
-(82, 'wnelson29@google.com.hk', ''),
-(83, 'agonzales2a@umich.edu', ''),
-(84, 'gbrown2b@histats.com', ''),
-(85, 'lgibson2c@wikimedia.org', ''),
-(86, 'jmendoza2d@surveymonkey.com', ''),
-(87, 'aryan2e@over-blog.com', ''),
-(88, 'ahawkins2f@hatena.ne.jp', ''),
-(89, 'jcoleman2g@trellian.com', ''),
-(90, 'pschmidt2h@dailymotion.com', ''),
-(91, 'fgeorge2i@state.gov', ''),
-(92, 'raustin2j@msu.edu', ''),
-(93, 'earnold2k@stumbleupon.com', ''),
-(94, 'bstone2l@yellowpages.com', ''),
-(95, 'ahart2m@rediff.com', ''),
-(96, 'mharper2n@mozilla.com', ''),
-(97, 'pwright2o@reference.com', ''),
-(98, 'rjohnston2p@discovery.com', ''),
-(99, 'jgutierrez2q@tinypic.com', ''),
-(100, 'rgutierrez2r@desdev.cn', ''),
-(102, '\'najat@gmail.com\'', 'ninanina'),
-(105, '\'test1@gmail.com\'', '\'iamiam\''),
-(106, '\'test2@gmail.com\'', '\'123123\''),
-(107, '\'test3@gmail.com\'', '\'YESY2IA');
-
---
--- Triggers `account`
---
-DELIMITER $$
-CREATE TRIGGER `adduser` AFTER INSERT ON `account` FOR EACH ROW BEGIN
-       INSERT INTO users (AccountID) VALUES (NEW.AccountID);
-   END
-$$
-DELIMITER ;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `account`
---
-ALTER TABLE `account`
-  ADD PRIMARY KEY (`AccountID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `account`
---
-ALTER TABLE `account`
-  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- Insert an admin user into the Users Table
+INSERT INTO users (username, email, password)
+VALUES ('admin', 'admin@admin.com', 'admin123');
