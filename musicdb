@@ -18,21 +18,21 @@ CREATE TABLE IF NOT EXISTS song (
 
 -- Add more songs for Radiohead
 INSERT INTO song (image, title, artist, album, duration, date_of_release) VALUES
-    ('radiohead_image1.jpg', 'Street Spirit (Fade Out)', 'Radiohead', 'The Bends', '04:12:00', '1995-03-06'),
-    ('radiohead_image2.jpg', 'Everything in Its Right Place', 'Radiohead', 'Kid A', '05:08:00', '2000-10-02'),
-    ('radiohead_image3.jpg', 'Burn the Witch', 'Radiohead', 'A Moon Shaped Pool', '03:40:00', '2016-05-03');
+    ('radiohead_image1.png', 'Street Spirit (Fade Out)', 'Radiohead', 'The Bends', '04:12:00', '1995-03-06'),
+    ('radiohead_image2.png', 'Everything in Its Right Place', 'Radiohead', 'Kid A', '05:08:00', '2000-10-02'),
+    ('radiohead_image3.png', 'Burn the Witch', 'Radiohead', 'A Moon Shaped Pool', '03:40:00', '2016-05-03');
 
 -- Add more songs for twentyone pilots
 INSERT INTO song (image, title, artist, album, duration, date_of_release) VALUES
-    ('twentyonepilots_image1.jpg', 'Car Radio', 'Twenty One Pilots', 'Vessel', '04:27:00', '2013-03-18'),
-    ('twentyonepilots_image2.jpg', 'Nico and the Niners', 'Twenty One Pilots', 'Trench', '03:46:00', '2018-07-11'),
-    ('twentyonepilots_image3.jpg', 'Redecorate', 'Twenty One Pilots', 'Scales And Icy', '04:09:00', '2021-05-21');
+    ('twentyonepilots_image1.png', 'Car Radio', 'Twenty One Pilots', 'Vessel', '04:27:00', '2013-03-18'),
+    ('twentyonepilots_image2.png', 'Nico and the Niners', 'Twenty One Pilots', 'Trench', '03:46:00', '2018-07-11'),
+    ('twentyonepilots_image3.png', 'Redecorate', 'Twenty One Pilots', 'Scales And Icy', '04:09:00', '2021-05-21');
 
 -- Add more songs for Lana Del Rey
 INSERT INTO song (image, title, artist, album, duration, date_of_release) VALUES
-    ('lanadelrey_image1.jpg', 'West Coast', 'Lana Del Rey', 'Ultraviolence', '04:16:00', '2014-04-14'),
-    ('lanadelrey_image2.jpg', 'Mariners Apartment Complex', 'Lana Del Rey', 'Norman Fucking Rockwell!', '04:12:00', '2018-09-12'),
-    ('lanadelrey_image3.jpg', 'Born to Die', 'Lana Del Rey', 'Born to Die', '04:46:00', '2012-01-27');
+    ('lanadelrey_image1.png', 'West Coast', 'Lana Del Rey', 'Ultraviolence', '04:16:00', '2014-04-14'),
+    ('lanadelrey_image2.png', 'Mariners Apartment Complex', 'Lana Del Rey', 'Norman Fucking Rockwell!', '04:12:00', '2018-09-12'),
+    ('lanadelrey_image3.png', 'Born to Die', 'Lana Del Rey', 'Born to Die', '04:46:00', '2012-01-27');
 
 -- Create Users Table
 CREATE TABLE IF NOT EXISTS users (
